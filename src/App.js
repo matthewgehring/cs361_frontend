@@ -1,24 +1,45 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
+import Licks from './pages/Licks';
+import Analyze from './pages/Analyze';
+import Home from './pages/Home';
+import Create from './pages/Create';
+import Edit from './pages/Edit';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/licks">Licks</Link>
+            </li>
+            <li>
+              <Link to="/analyze">Analyze</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Routes>
+          <Route path="/create" element={<Create />}>
+          </Route>
+          <Route path="/edit/:id" element={<Edit />}>
+          </Route>
+          <Route path="/analyze" element={<Analyze />}>
+          </Route>
+          <Route path="/licks" element={<Licks />}>
+          </Route>
+          <Route path="/" element={<Home />}>
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
