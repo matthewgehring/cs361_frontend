@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Table({items, headers, callback}){
-    console.log("hello", items)
     return (
         <>
             <table>

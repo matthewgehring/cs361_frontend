@@ -6,7 +6,6 @@ import CreateEditLick from './CreateEditLick';
 function LickListAddEdit({lick, dest, rest}) {
     const headers = ['Key', 'Chord', 'Progression', 'Sentiment', 'Tab']
     const callback = element => {
-        console.log("2")
         return (
             <CreateEditLick element={element} dest={dest} rest={rest} />
         )

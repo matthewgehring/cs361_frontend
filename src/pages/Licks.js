@@ -1,6 +1,6 @@
 import {React, useState, useEffect, useContext} from 'react';
-import { Link } from 'react-router-dom';
 import LickList from '../components/LickList';
+import Filter from '../components/Filter';
 
 function Licks() {
     const [licks, setLicks] = useState([]);
@@ -18,8 +18,8 @@ function Licks() {
     return (
         <>
             <h1>Lick Database</h1>
+            <Filter setLicks={setLicks} />
             <LickList licks={licks} set={setLicks} />
-            <Link to="/create">Add a lick</Link>
         </>
     )
 }

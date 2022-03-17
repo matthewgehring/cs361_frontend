@@ -31,7 +31,7 @@
 th{
   border: cornsilk;
   color: #c6ac8f;
-  background-color: #5e503f;
+  background-color: #444;
 }
 
 td{
@@ -45,6 +45,22 @@ tr{
   color:#22333b;
   background-color: gray;
 }
+
+/* img {
+  z-index: 1;
+  float: left;
+  width: 25%;
+  perspective: 1000px; 
+  backface-visibility: hidden; 
+  transition: opacity .3s ease 0s, transform .3s ease 0s;
+  transform: scale(1) rotate(0.001deg); 
+}
+
+img:hover {
+  position: relative;
+  z-index: 10;
+  transform: scale(2.1) rotate(0.001deg);
+} */
 
 /* Style taken from https://css-snippets.com/simple-horizontal-navigation/ */
 nav ul {
@@ -91,4 +107,112 @@ nav li {
 nav li {
   display: inline-block;
   margin-right: -4px;
+}
+
+.filter {
+  display: grid;
+  justify-content: center;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 640px){
+  .container{
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px){
+  .container{
+    width: 33.33333%;
+  }
+}
+
+.container .title{
+  color: #dddddd;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  opacity: 10;
+}
+
+.content-image{
+  width: 100%;
+}
+
+.content-details {
+  color: #dddddd;
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details p{
+  color: rgb(255, 255, 255);
+  font-size: 2em;
+}
+
+.fadeIn-bottom{
+  top: 80%;
+}
+
+.fadeIn-left{
+  left: 20%;
+}
+
+.licks{
+  display: grid;
+  justify-content: center;
 }
