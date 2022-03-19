@@ -8,6 +8,7 @@ import Edit from './pages/Edit';
 
 function App() {
   return (
+    <>
     <Router>
       <div>
         <nav>
@@ -23,9 +24,6 @@ function App() {
             </li>
           </ul>
         </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Routes>
           <Route path="/create" element={<Create />}>
           </Route>
@@ -40,6 +38,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </>
   );
 }
 

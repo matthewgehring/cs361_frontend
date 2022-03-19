@@ -1,5 +1,4 @@
 import {React, useState, useEffect, useContext} from 'react';
-import { Link } from 'react-router-dom';
 
 function Analyze() {
     const [lyrics, setLyrics] = useState('');
@@ -20,23 +19,32 @@ function Analyze() {
     const textChange = event => {
         setLyrics(event.target.value)
     };
-        
-    // useEffect(() => {
-    //     loadExercises();
-    // }, [sentiment]);
 
     return (
         <>
-        <h1>Analyze Lyrics</h1>
-            <h3>Copy and Paste your lyrics into the text box then submit them to see what emotion they provoke.</h3>
+        <div className='align-vertically'>
 
-            <label >Lyrics:</label>
-                <textarea rows="4" cols="50" onChange={textChange}>
-                </textarea>
-                <input type="submit" value="Submit" onClick={getSentiment}></input>
-                
-            <p>Click the "Submit" button and your lyrics emotion will be displayed below.</p>
-            <h3>Your lyrics provoke: {sentiment}</h3>
+            <div className='card'>
+                <h1>Analyze Lyrics</h1>
+                    <h3>Copy and Paste your lyrics into the text box then submit them to see what emotion they provoke.</h3>
+
+                    <label className="input">Lyrics:
+                        <textarea rows="4" cols="50" onChange={textChange}>
+                        </textarea>
+
+                        <p>
+                            <button type="submit" value="Submit" onClick={getSentiment}>Submit</button>
+                        </p>
+                    </label>
+
+                    <p>Click the "Submit" button and your lyrics emotion will be displayed below.</p>
+                    <h3>Your lyrics provoke: {sentiment}</h3>
+
+            </div>
+        </div>
+
+
+
         </>
     )
 }

@@ -41,8 +41,6 @@ function CreateEditLick({element, dest, rest}) {
             <td><input key="chord" value={chord} onChange={(e) => setChord(e.target.value)}></input></td>
             <td><input key="progression" value={progression} onChange={(e) => setProgression(e.target.value)}></input></td>
             <td><input key="sentiment" id="sentiment" value={sentiment} onChange={(e) => setSentiment(e.target.value)}></input></td>
-            {/* <td><input type="tab" key="tab" value={tab} onChange={(e) => setTab(e.target.value)}></input></td>
-             */}
              <td><FileBase64 type="file" multiple={false} onDone={({ base64 }) => setTab(base64)}
                 />
                 </td>

@@ -14,7 +14,11 @@ function LickList({licks, set}) {
     return (
         <>
         <div className='licks'>
-        <Link to="/create">Add a lick</Link>
+            <Link to="/create">
+                <button type="button">
+                    Add a lick
+                </button>
+            </Link>
             <Table items={licks} headers={headers} callback={callback}/>
         </div>
         </>
